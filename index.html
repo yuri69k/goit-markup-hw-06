@@ -407,24 +407,24 @@
                 </use>
             </svg>
         </button>
-        <form class="form">
+        <form class="form"  autocomplete="on">
             <h2>Оставьте свои данные, мы вам перезвоним</h2>
             <label class="form-field">
-                <input type="name" class="form-input" name="name" autofocus placeholder=" " />
+                <input type="name" class="form-input" name="name" required autofocus placeholder=" " />
                 <span class="form-label">Имя</span>
                 <svg class="icon">
                     <use href="images/sprite.svg#input-name"></use>
                 </svg>
             </label>
             <label class="form-field">
-                <input type="tel" class="form-input" name="tel" placeholder=" " />
+                <input type="tel" class="form-input" name="tel" required pattern="\+?[0-9\s\-\(\)]+" placeholder=" " />
                 <span class="form-label">Телефон</span>
                 <svg class="icon">
                     <use href="images/sprite.svg#input-phone"></use>
                 </svg>
             </label>
             <label class="form-field">
-                <input type="email" class="form-input" name="email" placeholder=" " />
+                <input type="email" class="form-input" name="email" required placeholder=" " />
                 <span class="form-label">Почта</span>
                 <svg class="icon">
                     <use href="images/sprite.svg#input-mail"></use>
