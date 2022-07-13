@@ -252,11 +252,9 @@ header {
             0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
-
 .btn-close {
-    display: flex; 
+    position: absolute;    
     box-sizing: border-box;
-    position: absolute;
     top: 8px;
     right: 8px;
     width: 30px;
@@ -264,22 +262,29 @@ header {
     border-radius: 50%;
     background: var(--text-white-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 7px;   
-       
 }
 
 .btn-close:hover {
     background-color: var(--text-white-color);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    cursor: pointer;
+    box-shadow: none;
 }
 
 .icon-close {
+    position: absolute;
+    top: 1px;
+    right: -1px;
+    width: 30px;
+    height: 30px;
+    padding: 4px;
     fill: #000000;
 }
+
 .icon-close:hover {
     fill: var(--accent-color);
+    cursor: pointer;
 }
+
+
 .form {
     padding: 40px;
 }
@@ -294,6 +299,7 @@ header {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
+    color: var(--text-color);
 }
 
 .form a {
@@ -333,21 +339,20 @@ header {
     position: absolute;
     width: 18px;
     height: 18px;
-    fill: var(--text-color);
-    color: var(--text-color);
+    fill: var(--primary-text-color);
+    color: var(--primary-text-color);
     top: 50%;
     transform: translateY(-50%);
     left: 15px;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-input:focus,
-.form-input:hover {
+.form-input:focus {
     border-color: var(--accent-color);
     cursor: pointer;
 }
 .comment-area {
     display: flex;
-   
+    box-sizing: border-box;
     height: 120px;
     resize: none;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -362,8 +367,7 @@ header {
     line-height: 1.17;
     color: rgba(117, 117, 117, 0.5);
 }
-.comment-area:focus,
-.comment-area:hover {
+.comment-area:focus {
     border-color: var(--accent-color);
     cursor: pointer;
 }
@@ -377,11 +381,11 @@ header {
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.comment-field:hover,
+
 .comment-field:focus {
     border-color: var(--accent-color);
 }
-.form-field:hover .icon,
+
 .form-field:focus-within .icon {
     fill: var(--accent-color);
 }
@@ -399,9 +403,9 @@ header {
     margin-left: 12px;
     margin-right: 9px;
     fill: var(--primary-text-color);
-    color: var(--primary-text-color);
+    color: var(--primary-text-color);  
 }
-.icon-check:hover,
+
 .icon-check:focus {
     fill: var(--accent-color);
     border-color:transparent;
@@ -409,19 +413,21 @@ header {
 
 .icon-check-active {
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     left: 52px;
     fill:var(--text-white-color);
     background-color:var(--accent-color);
+    border-radius: 3px;
     opacity: 0;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox:checked + .icon-check-active {
-    opacity: 1;
-    
+    opacity: 1;    
 }
+
+
 .send-btn {
     font-family: 'Roboto';
     font-weight: 700;
@@ -447,10 +453,11 @@ header {
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.send-btn:focus,
 .send-btn:hover {
     background: #188ce8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 .hero .button.secondary:hover {
@@ -608,13 +615,18 @@ header {
 }
 .company {
     display: flex;
+    justify-content: stretch;
     gap: 30px;
     margin-top: 50px;
+}
+.card {
+    display: flex;
+    width: 100%;
 }
 
 .company a {
     display: flex;
-    width: 170px;
+    width: 100%;
     height: 92px;
     align-items: center;
     justify-content: center;
@@ -622,10 +634,11 @@ header {
     border: 1px solid var(--social-bck);
     border-radius: 4px; 
 
-    transition-property: fill border;
+    transition-property: fill, border;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .company a:hover,
 .company a:focus {
     fill: var(--accent-color);
@@ -782,6 +795,7 @@ footer-input::placeholder {
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    border: transparent;
 }
 
 .follow-btn:hover,
